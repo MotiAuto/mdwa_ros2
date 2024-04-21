@@ -13,9 +13,9 @@ target_include_directories(target_mdwa_ros2
 )
 
 rclcpp_components_register_node(target_mdwa_ros2
-  EXECUTABLE mdwa_ros2_node
+  PLUGIN "mdwa_ros2::MDWANode"
+  EXECUTABLE motiodom_node
 )
-
 
 ament_auto_package(
   INSTALL_TO_SHARE
