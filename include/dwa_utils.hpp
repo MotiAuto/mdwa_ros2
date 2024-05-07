@@ -3,12 +3,28 @@
 
 namespace mdwa_ros2
 {
+    
     class DWAPlanner
     {
+        struct Pose
+        {
+            float x;
+            float y;
+            float rotation;
+            float vel;
+            float omega;
+
+            Pose(float x_, float y_, float rotation_, float vel_, float omega_);
+        };
+        public:
         DWAPlanner()
         {
             
         }
+
+        private:
+        float max_speed_, min_speed_, max_yawrate_, max_accel_, max_dyawrate_, v_reso_, yawrate_reso_, delta_time_, predict_time_;
+        float to_goal_cost_gain_, speed_cost_gain_, robot_radius_;
     };
 }
 
