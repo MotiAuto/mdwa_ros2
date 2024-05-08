@@ -12,4 +12,9 @@ namespace mdwa_ros2
     {
         
     }
+
+    Window::Window(float a_, float b_, float c_, float d_):a(a_),b(b_),c(c_),d(d_)
+    {
+
+    }
 }

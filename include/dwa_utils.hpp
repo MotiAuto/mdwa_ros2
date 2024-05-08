@@ -14,6 +14,13 @@ namespace mdwa_ros2
         State(float x_, float y_, float rotation_, float vel_, float omega_);
         State();
     };
+
+    struct Window
+    {
+        float a, b, c, d;
+        Window(float a_, float b_, float c_, float d_);
+    };
+    
     
     class DWAPlanner
     {
