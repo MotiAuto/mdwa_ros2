@@ -22,15 +22,21 @@ namespace mdwa_ros2
     };
     
     
-    class DWAPlanner
+    class DWA_Planner
     {
         public:
-        DWAPlanner()
-        {
-            
-        }
+        DWA_Planner(
+            float max_speed, float min_speed, float max_yawrate, float max_accel,
+            float max_dyawrate, float v_reso, float yawrate_reso, float delta_time,
+            float predict_time, float robot_radius
+        );
+        static DWA_Planner* create_dwa_planner();
+        void set_cost_gain(float goal_cost_gain, float speed_cost_gain);
+        void dwa_control();
 
         private:
+        Window calc_dynamic_window();
+        State state;
         float max_speed_, min_speed_, max_yawrate_, max_accel_, max_dyawrate_, v_reso_, yawrate_reso_, delta_time_, predict_time_;
         float to_goal_cost_gain_, speed_cost_gain_, robot_radius_;
     };
