@@ -3,19 +3,20 @@
 
 namespace mdwa_ros2
 {
+    struct State
+    {
+        float x;
+        float y;
+        float rotation;
+        float vel;
+        float omega;
+
+        State(float x_, float y_, float rotation_, float vel_, float omega_);
+        State();
+    };
     
     class DWAPlanner
     {
-        struct Pose
-        {
-            float x;
-            float y;
-            float rotation;
-            float vel;
-            float omega;
-
-            Pose(float x_, float y_, float rotation_, float vel_, float omega_);
-        };
         public:
         DWAPlanner()
         {
