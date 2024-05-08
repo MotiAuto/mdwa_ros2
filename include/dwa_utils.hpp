@@ -3,6 +3,11 @@
 
 namespace mdwa_ros2
 {
+    struct DWAParams
+    {
+        /* data */
+    };
+    
     struct State
     {
         float x;
