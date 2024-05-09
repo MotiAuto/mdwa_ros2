@@ -38,4 +38,10 @@ namespace mdwa_ros2
             params.delta_time_, params.predict_time_, params.robot_radius_
         ));
     }
+
+    void DWA_Planner::set_cost_gain(float goal_cost_gain, float speed_cost_gain)
+    {
+        to_goal_cost_gain_ = goal_cost_gain;
+        speed_cost_gain_ = speed_cost_gain;
+    }
 }
