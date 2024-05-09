@@ -5,7 +5,7 @@ namespace mdwa_ros2
 {
     struct DWAParams
     {
-        /* data */
+        float max_speed_, min_speed_, max_yawrate_, max_accel_, max_dyawrate_, v_reso_, yawrate_reso_, delta_time_, predict_time_;
     };
     
     struct State
