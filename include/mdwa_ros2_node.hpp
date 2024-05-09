@@ -3,6 +3,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <geometry_msgs/msg/pose_stamped.hpp>
+#include "dwa_utils.hpp"
 
 namespace mdwa_ros2
 {
@@ -16,7 +17,7 @@ namespace mdwa_ros2
 
         rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr sub_current_pose_;
         rclcpp::Subscription<geometry_msgs::msg::PoseStamped>::SharedPtr sub_goal_pose_;
-        
+        DWAParams params_;
     };
 }
 
