@@ -30,8 +30,12 @@ namespace mdwa_ros2
 
     }
 
-    DWA_Planner *DWA_Planner::create_dwa_planner()
+    DWA_Planner *DWA_Planner::create_dwa_planner(DWAParams params)
     {
-        
+        return (DWA_Planner *)(new DWA_Planner(
+            params.max_speed_, params.min_speed_, params.max_yawrate_, params.max_accel_,
+            params.max_dyawrate_, params.v_reso_, params.yawrate_reso_, 
+            params.delta_time_, params.predict_time_, params.robot_radius_
+        ));
     }
 }

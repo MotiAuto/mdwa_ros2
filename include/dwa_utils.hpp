@@ -6,6 +6,7 @@ namespace mdwa_ros2
     struct DWAParams
     {
         float max_speed_, min_speed_, max_yawrate_, max_accel_, max_dyawrate_, v_reso_, yawrate_reso_, delta_time_, predict_time_;
+        float robot_radius_;
     };
     
     struct State
@@ -35,7 +36,7 @@ namespace mdwa_ros2
             float max_dyawrate, float v_reso, float yawrate_reso, float delta_time,
             float predict_time, float robot_radius
         );
-        static DWA_Planner* create_dwa_planner();
+        static DWA_Planner* create_dwa_planner(DWAParams params);
         void set_cost_gain(float goal_cost_gain, float speed_cost_gain);
         void dwa_control();
 
